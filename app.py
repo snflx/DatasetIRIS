@@ -1,12 +1,18 @@
+# pyrefly: ignore [missing-import]
 import streamlit as st
 import pandas as pd
+# pyrefly: ignore [missing-import]
 import numpy as np
+# pyrefly: ignore [missing-import]
 import matplotlib.pyplot as plt
+# pyrefly: ignore [missing-import]
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import confusion_matrix, classification_report, accuracy_score, ConfusionMatrixDisplay
+# pyrefly: ignore [missing-import]
 import os
+# pyrefly: ignore [missing-import]
 from PIL import Image
 
 # Set premium page configuration
@@ -73,7 +79,7 @@ st.markdown("""
         border: 1px solid #e1bee7;
     }
     </style>
-""", unsafe_allowed_html=True)
+""", unsafe_allow_html=True)
 
 # Load dataset function
 @st.cache_data
