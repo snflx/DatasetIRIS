@@ -173,7 +173,7 @@ streamlit run app.py
 ```
 
 El servidor abrirá una pestaña en tu navegador en `http://localhost:8501`. La aplicación contiene pestañas para:
-- Conocer la teoría del ID3 y la autoría del proyecto (Feibert Alirio Guzmán Pérez).
+- Conocer la teoría del ID3 y la autoría del proyecto (Juan Pablo Sanchez Florez).
 - Ver e interactuar con la tabla de datos original.
 - Analizar gráficos estadísticos dinámicos (EDA).
 - Ejecutar el modelo en tiempo real y ver su árbol lógico.

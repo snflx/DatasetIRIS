@@ -17,7 +17,7 @@ from PIL import Image
 
 # Set premium page configuration
 st.set_page_config(
-    page_title="Iris ID3 Classifier - Talento Tech",
+    page_title="Iris ID3 Classifier - Unilasallista",
     page_icon="🌲",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -106,7 +106,9 @@ def load_data():
 df = load_data()
 
 # Navigation Sidebar
-st.sidebar.image("Imagenes/Arbol.png" if os.path.exists("Imagenes/Arbol.png") else None, width=150)
+sidebar_logo = "Imagenes/Arbol.png"
+if os.path.exists(sidebar_logo):
+    st.sidebar.image(sidebar_logo, width=150)
 st.sidebar.title("Menú de Navegación")
 st.sidebar.markdown("---")
 
@@ -125,14 +127,14 @@ app_mode = st.sidebar.radio(
 st.sidebar.markdown("---")
 st.sidebar.info(
     "**Proyecto:** Árbol de Decisión ID3\n\n"
-    "**Autor:** Feibert Alirio Guzmán Pérez\n\n"
-    "**Entorno:** Talento Tech - IA Módulo 1"
+    "**Autor:** Juan Pablo Sanchez Florez\n\n"
+    "**Entorno:** Unilasallista - IA Módulo 1"
 )
 
 # ----------------- MODULE 1: OVERVIEW -----------------
 if app_mode == "🏠 Inicio & Presentación":
-    st.markdown("<div class='main-title'>Agente Especializado en Proyectos ML: Clasificación Iris</div>", unsafe_allowed_html=True)
-    st.markdown("<div class='subtitle'>Despliegue Interactivo del Modelo de Árbol de Decisión ID3 (Entropía)</div>", unsafe_allowed_html=True)
+    st.markdown("<div class='main-title'>Agente Especializado en Proyectos ML: Clasificación Iris</div>", unsafe_allow_html=True)
+    st.markdown("<div class='subtitle'>Despliegue Interactivo del Modelo de Árbol de Decisión ID3 (Entropía)</div>", unsafe_allow_html=True)
     
     col1, col2 = st.columns([2, 1])
     
@@ -143,14 +145,14 @@ if app_mode == "🏠 Inicio & Presentación":
             <p>La identificación manual de especies de flores de <b>Iris (Setosa, Versicolor, Virginica)</b> es un proceso lento y propenso a errores humanos para estudiantes de botánica y ecólogos. Debido a que estas plantas comparten características morfológicas muy similares en sus sépalos y pétalos, la clasificación visual directa puede retrasar análisis biológicos importantes.</p>
             <p>Este proyecto implementa y automatiza la clasificación taxonómica mediante el algoritmo de aprendizaje supervisado de <b>Árbol de Decisión ID3 (basado en la entropía de Shannon)</b>, alcanzando una <b>exactitud del 96.67%</b> en la predicción del tipo de flor a partir de sus dimensiones físicas de sépalo y pétalo.</p>
         </div>
-        """, unsafe_allowed_html=True)
+        """, unsafe_allow_html=True)
         
         st.markdown("""
         <div class='card'>
             <h3>🧠 Fundamentos Técnicos del Algoritmo ID3</h3>
             <p>El algoritmo <b>ID3 (Iterative Dichotomiser 3)</b> fue diseñado por J. Ross Quinlan y se basa en la selección de divisiones en los datos que maximicen la reducción del desorden o <b>Entropía de Shannon</b>, maximizando consecuentemente la <b>Ganancia de Información</b>.</p>
         </div>
-        """, unsafe_allowed_html=True)
+        """, unsafe_allow_html=True)
         
         st.markdown("#### Fórmulas de la Entropía e Información")
         st.latex(r"H(S) = - \sum_{i=1}^{c} p_i \log_2(p_i)")
@@ -160,7 +162,7 @@ if app_mode == "🏠 Inicio & Presentación":
 
     with col2:
         st.markdown("### 🏆 Integrante del Proyecto")
-        st.success("**Feibert Alirio Guzmán Pérez**\n\n*Ingeniería de Sistemas / Ciencia de Datos e IA*")
+        st.success("**Juan Pablo Sanchez Florez**\n\n*Ingeniería de Sistemas / Ciencia de Datos e IA*")
         
         st.markdown("### 📊 Indicadores Clave")
         st.info("☘️ **Dataset:** Iris Flower Dataset")
@@ -173,8 +175,8 @@ if app_mode == "🏠 Inicio & Presentación":
 
 # ----------------- MODULE 2: DATASET EXPLORATION -----------------
 elif app_mode == "📊 Exploración del Dataset":
-    st.markdown("<div class='main-title'>Exploración del Dataset Iris</div>", unsafe_allowed_html=True)
-    st.markdown("<div class='subtitle'>Visualización detallada y búsqueda interactiva en el conjunto de datos</div>", unsafe_allowed_html=True)
+    st.markdown("<div class='main-title'>Exploración del Dataset Iris</div>", unsafe_allow_html=True)
+    st.markdown("<div class='subtitle'>Visualización detallada y búsqueda interactiva en el conjunto de datos</div>", unsafe_allow_html=True)
     
     st.markdown("""
     El dataset Iris es un clásico en el mundo del Machine Learning introducido por Ronald Fisher en 1936.
@@ -204,8 +206,8 @@ elif app_mode == "📊 Exploración del Dataset":
 
 # ----------------- MODULE 3: EDA -----------------
 elif app_mode == "📈 Análisis Exploratorio (EDA)":
-    st.markdown("<div class='main-title'>Análisis Exploratorio de Datos (EDA)</div>", unsafe_allowed_html=True)
-    st.markdown("<div class='subtitle'>Visualizaciones gráficas y relaciones morfológicas</div>", unsafe_allowed_html=True)
+    st.markdown("<div class='main-title'>Análisis Exploratorio de Datos (EDA)</div>", unsafe_allow_html=True)
+    st.markdown("<div class='subtitle'>Visualizaciones gráficas y relaciones morfológicas</div>", unsafe_allow_html=True)
     
     eda_option = st.selectbox(
         "Selecciona el tipo de gráfico:",
@@ -263,8 +265,8 @@ elif app_mode == "📈 Análisis Exploratorio (EDA)":
 
 # ----------------- MODULE 4: MODELING -----------------
 elif app_mode == "🌲 Modelado (ID3)":
-    st.markdown("<div class='main-title'>Modelado e Interpretación del Árbol ID3</div>", unsafe_allowed_html=True)
-    st.markdown("<div class='subtitle'>Detalles del entrenamiento del clasificador y reglas lógicas aprendidas</div>", unsafe_allowed_html=True)
+    st.markdown("<div class='main-title'>Modelado e Interpretación del Árbol ID3</div>", unsafe_allow_html=True)
+    st.markdown("<div class='subtitle'>Detalles del entrenamiento del clasificador y reglas lógicas aprendidas</div>", unsafe_allow_html=True)
     
     # Train the model live
     X = df.drop('class', axis=1)
@@ -283,7 +285,7 @@ elif app_mode == "🌲 Modelado (ID3)":
             <li><b>Criterio de Partición:</b> Entropía (ID3)</li>
         </ul>
     </div>
-    """, unsafe_allowed_html=True)
+    """, unsafe_allow_html=True)
     
     col1, col2 = st.columns([1, 1])
     
@@ -317,8 +319,8 @@ elif app_mode == "🌲 Modelado (ID3)":
 
 # ----------------- MODULE 5: METRICS -----------------
 elif app_mode == "🏆 Métricas y Evaluación":
-    st.markdown("<div class='main-title'>Evaluación de Métricas del Modelo</div>", unsafe_allowed_html=True)
-    st.markdown("<div class='subtitle'>Métricas académicas y análisis de la Matriz de Confusión</div>", unsafe_allowed_html=True)
+    st.markdown("<div class='main-title'>Evaluación de Métricas del Modelo</div>", unsafe_allow_html=True)
+    st.markdown("<div class='subtitle'>Métricas académicas y análisis de la Matriz de Confusión</div>", unsafe_allow_html=True)
     
     X = df.drop('class', axis=1)
     y = df['class']
@@ -332,11 +334,11 @@ elif app_mode == "🏆 Métricas y Evaluación":
     
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.markdown("<div class='metric-card'><h4>🎯 Exactitud (Accuracy)</h4><h2>96.67%</h2><p>29 de 30 correctas</p></div>", unsafe_allowed_html=True)
+        st.markdown("<div class='metric-card'><h4>🎯 Exactitud (Accuracy)</h4><h2>96.67%</h2><p>29 de 30 correctas</p></div>", unsafe_allow_html=True)
     with col2:
-        st.markdown("<div class='metric-card'><h4>☘️ F1-Score Setosa</h4><h2>100%</h2><p>Precisión & Recall perfectos</p></div>", unsafe_allowed_html=True)
+        st.markdown("<div class='metric-card'><h4>☘️ F1-Score Setosa</h4><h2>100%</h2><p>Precisión & Recall perfectos</p></div>", unsafe_allow_html=True)
     with col3:
-        st.markdown("<div class='metric-card'><h4>📉 Tasa de Error</h4><h2>3.33%</h2><p>1 sola muestra errónea</p></div>", unsafe_allowed_html=True)
+        st.markdown("<div class='metric-card'><h4>📉 Tasa de Error</h4><h2>3.33%</h2><p>1 sola muestra errónea</p></div>", unsafe_allow_html=True)
         
     st.markdown("---")
     
@@ -361,7 +363,7 @@ elif app_mode == "🏆 Métricas y Evaluación":
             <p>El modelo presenta un único error de clasificación en el conjunto de prueba (1 flor real de <b>Iris-versicolor</b> fue clasificada erróneamente como <b>Iris-virginica</b>).</p>
             <p>Esto se debe al solapamiento físico natural de las dimensiones del pétalo de estas dos especies en la frontera de 1.75 cm y 4.95 cm de longitud de pétalo.</p>
         </div>
-        """, unsafe_allowed_html=True)
+        """, unsafe_allow_html=True)
         
     if os.path.exists("Imagenes/Matriz de confucion.png"):
         st.markdown("### 📁 Evidencia Gráfica Guardada (`Matriz de confucion.png`)")
@@ -369,8 +371,8 @@ elif app_mode == "🏆 Métricas y Evaluación":
 
 # ----------------- MODULE 6: PREDICTIONS -----------------
 elif app_mode == "🔮 Predicción Interactiva":
-    st.markdown("<div class='main-title'>Predicción Interactiva de Especies</div>", unsafe_allowed_html=True)
-    st.markdown("<div class='subtitle'>Ingresa las dimensiones de la flor para clasificarla en tiempo real</div>", unsafe_allowed_html=True)
+    st.markdown("<div class='main-title'>Predicción Interactiva de Especies</div>", unsafe_allow_html=True)
+    st.markdown("<div class='subtitle'>Ingresa las dimensiones de la flor para clasificarla en tiempo real</div>", unsafe_allow_html=True)
     
     # Train the model
     X = df.drop('class', axis=1)
@@ -411,13 +413,13 @@ elif app_mode == "🔮 Predicción Interactiva":
     
     with res_col1:
         if prediction == "Iris-setosa":
-            st.markdown("La especie predicha es: <span class='badge-setosa'>Iris-setosa</span>", unsafe_allowed_html=True)
+            st.markdown("La especie predicha es: <span class='badge-setosa'>Iris-setosa</span>", unsafe_allow_html=True)
             st.success("La especie **Iris-setosa** está perfectamente clasificada. Sus sépalos suelen ser anchos y sus pétalos pequeños.")
         elif prediction == "Iris-versicolor":
-            st.markdown("La especie predicha es: <span class='badge-versicolor'>Iris-versicolor</span>", unsafe_allowed_html=True)
+            st.markdown("La especie predicha es: <span class='badge-versicolor'>Iris-versicolor</span>", unsafe_allow_html=True)
             st.info("La especie **Iris-versicolor** se encuentra en el rango morfológico intermedio de pétalos.")
         elif prediction == "Iris-virginica":
-            st.markdown("La especie predicha es: <span class='badge-virginica'>Iris-virginica</span>", unsafe_allowed_html=True)
+            st.markdown("La especie predicha es: <span class='badge-virginica'>Iris-virginica</span>", unsafe_allow_html=True)
             st.warning("La especie **Iris-virginica** cuenta con los pétalos más grandes y anchos del grupo.")
             
         st.markdown("#### Distribución de Probabilidades de Inferencia:")

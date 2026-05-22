@@ -55,7 +55,7 @@ c:\Users\Juan\Desktop\DATASET IRIS\
 │   ├── Matriz de confucion.png          # Matriz de confusión histórica
 │   └── adf53aa6-ad77-489c-92ed-8b2ab208faef.png  # Soporte visual
 ├── Proyecto/
-│   └── Material_1_Proyecto_IA_Talento_Tech.docx  # Memoria técnica académica (.docx)
+│   └── Material_1_Proyecto_IA_Unilasallista.docx # Memoria técnica académica (.docx)
 ├── app.py                              # Aplicativo interactivo en Streamlit
 ├── index.html                          # Landing Page interactiva premium
 ├── index.css                           # Estilos premium CSS de la Landing Page
@@ -92,6 +92,12 @@ streamlit run app.py
 ```
 Una vez iniciado, la aplicación se abrirá automáticamente en tu navegador web en `http://localhost:8501`.
 
+### Desplegar en Streamlit Community Cloud
+1. Sube este proyecto a un repositorio de GitHub.
+2. Entra a [Streamlit Community Cloud](https://streamlit.io/cloud) y selecciona **New app**.
+3. Elige el repositorio, la rama principal y define `app.py` como archivo principal.
+4. Streamlit instalará las dependencias desde `requirements.txt` y publicará la aplicación.
+
 ### Abrir la Landing Page Empresarial
 Simplemente abre el archivo `index.html` en cualquier navegador web moderno (Chrome, Edge, Firefox, Safari) o haz doble clic sobre el archivo en tu explorador de archivos de Windows.
 
@@ -124,7 +130,7 @@ $$H(S) = - \sum_{i=1}^{c} p_i \log_2(p_i)$$
 
 ## ✍️ Créditos y Autoría
 
-- **Desarrollador Principal:** Feibert Alirio Guzmán Pérez
+- **Desarrollador Principal:** Juan Pablo Sanchez Florez
 - **Programa:** Inteligencia Artificial - Módulo 1 (Aprendizaje Inteligente)
-- **Institución:** Talento Tech
+- **Institución:** Unilasallista
 - **Tutor / Entorno:** Taller Colaborativo - Propuesta Iris ID3
